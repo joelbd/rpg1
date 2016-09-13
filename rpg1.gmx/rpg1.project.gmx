@@ -21,10 +21,17 @@
       <sprite>sprites\spr_enemy_slime</sprite>
     </sprites>
     <sprites name="Environment">
+      <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_dialog_box</sprite>
+      <sprite>sprites\spr_sign</sprite>
       <sprite>sprites\spr_wall</sprite>
     </sprites>
-    <sprite>sprites\spr_damage</sprite>
-    <sprite>sprites\spr_expr</sprite>
+    <sprites name="misc">
+      <sprite>sprites\spr_health</sprite>
+      <sprite>sprites\spr_damage</sprite>
+      <sprite>sprites\spr_interact</sprite>
+      <sprite>sprites\spr_expr</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -39,6 +46,8 @@
     <scripts name="Helper Scripts">
       <script>scripts\scr_get_face.gml</script>
       <script>scripts\scr_get_input.gml</script>
+      <script>scripts\scr_chance.gml</script>
+      <script>scripts\scr_string_copy_words.gml</script>
     </scripts>
     <scripts name="Enemy States">
       <script>scripts\scr_enemy_wander_state.gml</script>
@@ -48,22 +57,40 @@
       <scripts name="Enemy Helper Scripts">
         <script>scripts\scr_enemy_choose_next_state.gml</script>
         <script>scripts\scr_check_for_player.gml</script>
+        <script>scripts\scr_enemy_move_to_player.gml</script>
       </scripts>
     </scripts>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_lifeform_parent</object>
-    <object>objects\obj_player</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_view</object>
-    <object>objects\obj_dash_effect</object>
-    <object>objects\obj_enemy_slime</object>
-    <object>objects\obj_damage</object>
-    <object>objects\obj_player_stats</object>
-    <object>objects\obj_expr</object>
+    <objects name="Environment">
+      <object>objects\obj_door</object>
+      <object>objects\obj_dialog</object>
+      <object>objects\obj_speaker</object>
+      <object>objects\obj_sign</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_pause_menu</object>
+    </objects>
+    <objects name="Life forms">
+      <object>objects\obj_view</object>
+      <object>objects\obj_enemy_slime</object>
+      <object>objects\obj_lifeform_parent</object>
+      <objects name="Player objects">
+        <object>objects\obj_player</object>
+        <object>objects\obj_player_stats</object>
+        <object>objects\obj_dash_effect</object>
+        <object>objects\obj_expr</object>
+        <object>objects\obj_health</object>
+      </objects>
+    </objects>
+    <objects name="Action">
+      <object>objects\obj_damage</object>
+      <object>objects\obj_input</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
+    <room>rooms\rm_two</room>
+    <room>rooms\rm_pause</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
