@@ -45,9 +45,11 @@
     </scripts>
     <scripts name="Helper Scripts">
       <script>scripts\scr_get_face.gml</script>
+      <script>scripts\scr_save_game.gml</script>
       <script>scripts\scr_get_input.gml</script>
       <script>scripts\scr_chance.gml</script>
       <script>scripts\scr_string_copy_words.gml</script>
+      <script>scripts\scr_load_game.gml</script>
     </scripts>
     <scripts name="Enemy States">
       <script>scripts\scr_enemy_wander_state.gml</script>
@@ -68,7 +70,6 @@
       <object>objects\obj_speaker</object>
       <object>objects\obj_sign</object>
       <object>objects\obj_wall</object>
-      <object>objects\obj_pause_menu</object>
     </objects>
     <objects name="Life forms">
       <object>objects\obj_view</object>
@@ -85,6 +86,7 @@
     <objects name="Action">
       <object>objects\obj_damage</object>
       <object>objects\obj_input</object>
+      <object>objects\obj_pause_menu</object>
     </objects>
   </objects>
   <rooms name="rooms">

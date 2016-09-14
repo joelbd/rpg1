@@ -27,8 +27,7 @@
             <kind>1</kind>
             <string>/// Init the input object
 scr_get_input();
-prev_rm = room;
-
+obj_player_stats.previous_rm = room;
 </string>
           </argument>
         </arguments>
@@ -59,13 +58,16 @@ if (pause_key) {
     if (room != rm_pause) {
         if (instance_exists(obj_player)) {
             obj_player.persistent = false;
-            obj_player_stats.persistent = false;
+            //obj_player_stats.persistent = false;
         }
-        prev_rm = room;
+        obj_player_stats.previous_rm = room;
+        room_persistent = true;
         room_goto(rm_pause);
     } else {
-        room_goto(prev_rm);
+        
+        room_goto(previous_rm);
     }
+    pause_key = false;
 }
 </string>
           </argument>
